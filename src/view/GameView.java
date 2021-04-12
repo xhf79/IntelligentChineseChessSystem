@@ -104,7 +104,8 @@ public class GameView {
     }
 
     private int[] viewToModelConverter(int sPos[]) {
-        /* To make things right, I have to put an 'additional sy offset'. God knows why. */
+        /* To make things right, I have to put an 'additional sy offset'. God knows why. */ 
+        //因为你在40行里，设置了frame的高度加了40，然而实际上，上面的状态栏只用了15，所以剩下的25就相当拉长main.jpg图片的长度。棋子的中心点也没对准交叉点。2021-04-13
         int ADDITIONAL_SY_OFFSET = 25;
         int y = (sPos[0] - SX_OFFSET) / SX_COE, x = (sPos[1] - SY_OFFSET - ADDITIONAL_SY_OFFSET) / SY_COE;
         return new int[]{x, y};
